@@ -19,6 +19,14 @@ class loginoptions:
     def t_option(self):
         print ("b")
         init.teacherlogin()
-    
+        
 if __name__ == "__main__":
     loginoptions()
+
+def teacher_login_panel():
+    self.win = Tk()  
+    self.win.title("Teacher login panel")
+    self.win.geometry("1920x1080")
+    self.win.configure(bg="#6495ed")
+    
+    self.win.mainloop()

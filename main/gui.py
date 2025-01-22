@@ -29,8 +29,18 @@ def teacher_login_panel():
     win.title("Teacher login panel")
     win.geometry("1920x1080")
     win.configure(bg="#6495ed")
-    win.lbl_title = Label(text="Teacher Login",font=("Calibri",60,"bold"),fg="#ffffff",bg="#6495ed")
-    win.lbl_title.pack(pady=30)
+    win.lbl_title = Label(win,text="Teacher Login",font=("Calibri",60,"bold"),fg="#ffffff",bg="#6495ed")
+    win.lbl_title.pack()
+    win.lbl_username = Label(win,text="Enter Username: ",font=("Calibri",20,"bold"),fg="#191970",bg="#6495ed")
+    win.lbl_username.pack()
+    win.ent_username = Entry(win,width=24)
+    win.ent_username.pack()
+
+    win.lbl_password = Label(win,text="Enter Password: ",font=("Calibri",20,"bold"),fg="#191970",bg="#6495ed")
+    win.ent_password = Entry(win,width=24)
+    win.lbl_password.pack()
+    win.ent_password.pack()
+
 
 
     win.mainloop()

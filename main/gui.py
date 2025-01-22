@@ -18,15 +18,19 @@ class loginoptions:
 
     def t_option(self):
         print ("b")
+        self.win.destroy()
         init.teacherlogin()
         
 if __name__ == "__main__":
     loginoptions()
 
 def teacher_login_panel():
-    self.win = Tk()  
-    self.win.title("Teacher login panel")
-    self.win.geometry("1920x1080")
-    self.win.configure(bg="#6495ed")
-    
-    self.win.mainloop()
+    win = Tk()  
+    win.title("Teacher login panel")
+    win.geometry("1920x1080")
+    win.configure(bg="#6495ed")
+    win.lbl_title = Label(text="Teacher Login",font=("Calibri",60,"bold"),fg="#ffffff",bg="#6495ed")
+    win.lbl_title.pack(pady=30)
+
+
+    win.mainloop()

@@ -2,7 +2,11 @@ from tkinter import messagebox
 from tkinter import *
 import gui
 
-def teacherlogin():
-    print ("PRG: login opt success")
-    gui.teacher_login_panel()
+#def teacherlogin(username, password):
+ #   if username == "user" and password == "password":
+  #      print("PRG: login opt success")
+   #     return True
+    #else:
+     #   return False
+
 

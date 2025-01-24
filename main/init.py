@@ -9,4 +9,12 @@ import gui
     #else:
      #   return False
 
+#    def navigate_to_panel(self, role):
+ #       if role == "teacher":
+  #          teacher_panel = TeacherPanel()
+   #         self.win.destroy()
+    #    elif role == "student":
+     #       #student_panel = StudentPanel()
+      #      print("student panel not implemented yet")
+       #     self.win.destroy()
 

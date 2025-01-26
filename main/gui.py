@@ -1,5 +1,8 @@
 from tkinter import *
+from tkinter import messagebox
 import init
+
+
 class TeacherPanel: #TeacherPanel designed for teachers to access their panel and login
     def __init__(self,master):
         self.master = master
@@ -19,13 +22,25 @@ class TeacherPanel: #TeacherPanel designed for teachers to access their panel an
         self.win.lbl_password.pack()
         self.win.ent_password.pack()
 
-        self.win.btn_login = Button(self.win,text="Confirm Login",font=("Calibri",20,"bold"),fg="#ffffff",bg="#191970",width=20)
+        self.win.btn_login = Button(self.win,text="Confirm Login",font=("Calibri",20,"bold"),fg="#ffffff",bg="#191970",width=20,command=self.do_attempt_login)
         self.win.btn_login.pack(pady=10)
         self.win.btn_goback = Button(self.win,text="Go Back",font=("Calibri",20,"bold"),fg="#ffffff",bg="#191970",width=20,command=self.nav_to_options)
         self.win.btn_goback.pack()
     
 
         self.win.mainloop()
+
+    def do_attempt_login(self):
+        username = self.win.ent_username.get()
+        password = self.win.ent_password.get()
+        if username != "":
+            pass_username = init.teacher_login_validation(username,password)
+        else:
+            messagebox.showerror("Username","Cannot leave username blank")
+            self.win.ent_username.delete(0,END) #clear data to ensure fluidity
+
+            
+
 
     def nav_to_options(self): #navigates to LoginOptions and closes TeacherPanel window
         self.win.destroy()
@@ -86,19 +101,6 @@ class LoginOptions: #LoginOptions is the main GUI showing student or teacher opt
         self.win.withdraw()
         StudentPanel(self.win)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#start the program at LoginOptions
 if __name__ == "__main__":
     app = LoginOptions()
